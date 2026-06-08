@@ -2,7 +2,7 @@
 
 @theme {
   /* ── Brand colours ───────────────────────────────────────────── */
-  --color-gov-primary:        #111111;
+  --color-gov-primary:        #2c2c2c;
   --color-gov-primary-hover:  #2a2a2a;
   --color-gov-accent:         #005b96;
   --color-gov-accent-hover:   #004a7d;
@@ -71,12 +71,12 @@
 
   /* Page hero gradient */
   .hero-gradient {
-    background: linear-gradient(150deg, #111111 0%, #333333 40%, #005b96 100%);
+    background: linear-gradient(150deg, #2c2c2c 0%, #333333 40%, #005b96 100%);
   }
 
   /* Inner page banner */
   .page-banner {
-    background: linear-gradient(135deg, #111111 0%, #2a2a2a 100%);
+    background: linear-gradient(135deg, #2c2c2c 0%, #2a2a2a 100%);
   }
 
   /* Category badge colours */

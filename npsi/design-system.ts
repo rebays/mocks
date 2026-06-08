@@ -5,7 +5,7 @@
  */
 
 export const colors = {
-  primary:         "#111111",   // near black — header / footer / nav bg
+  primary:         "#2c2c2c",   // near black — header / footer / nav bg
   primaryHover:    "#2a2a2a",
   accent:          "#005b96",   // government blue — links, interactive
   accentHover:     "#0056b3",
