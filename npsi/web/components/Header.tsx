@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { nav } from "@/lib/data";
@@ -44,21 +45,15 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-[72px] lg:h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 shrink-0">
-            <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow">
-              <span className="text-gov-primary font-bold text-[10px] leading-tight text-center">
-                NP
-                <br />
-                SI
-              </span>
-            </div>
-            <div>
-              <div className="text-white font-bold text-sm sm:text-base leading-tight">
-                National Parliament
-              </div>
-              <div className="text-white/60 text-[11px] hidden sm:block">
-                Solomon Islands
-              </div>
+          <Link href="/" className="shrink-0">
+            <div className="relative h-10 w-56">
+              <Image
+                src="/logo.jpg"
+                alt="National Parliament of Solomon Islands"
+                fill
+                priority
+                className="object-contain object-left"
+              />
             </div>
           </Link>
 
