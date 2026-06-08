@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
 import { nav } from "@/lib/data";
 
 export default function Hero() {
@@ -51,14 +50,6 @@ export default function Hero() {
       {/* ── CTA card — overlaps hero bottom border ───────────────── */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 translate-y-12">
         <div className="bg-white rounded-xl p-8 sm:p-10 shadow-2xl">
-          {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gov-gold/15 border border-gov-gold/40 mb-5">
-            <span className="w-2 h-2 rounded-full bg-gov-gold animate-pulse" />
-            <span className="text-gov-gold text-xs font-semibold uppercase tracking-widest">
-              10th Parliament · 3rd Session
-            </span>
-          </div>
-
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl font-bold text-gov-primary leading-tight mb-8">
             Welcome to{" "}
@@ -77,9 +68,8 @@ export default function Hero() {
                     <li key={item.label}>
                       <Link
                         href={item.href}
-                        className="inline-flex items-center gap-2 text-base text-gray-700 hover:text-gov-accent transition-colors"
+                        className="text-base text-gray-700 hover:text-gov-accent transition-colors"
                       >
-                        <ChevronRight className="w-3.5 h-3.5 text-gov-gold shrink-0" />
                         {item.label}
                       </Link>
                     </li>
