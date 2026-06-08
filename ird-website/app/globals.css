@@ -1,40 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --font-headline: var(--font-headline-next), sans-serif;
-  --font-body: var(--font-body-next), sans-serif;
-  --font-label: var(--font-label-next), sans-serif;
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", system-ui, sans-serif;
 
-  --color-primary: #001e40;
-  --color-primary-container: #003366;
-  --color-secondary: #0b6d3b;
-  --color-secondary-fixed: #9ef6b6;
-  --color-on-secondary-fixed: #00210e;
-  --color-surface: #f3faff;
-  --color-surface-container: #dbf1fe;
-  --color-surface-container-low: #e6f6ff;
-  --color-surface-container-high: #d5ecf8;
-  --color-surface-container-highest: #cfe6f2;
-  --color-on-surface: #071e27;
-  --color-on-surface-variant: #43474f;
-  --color-background: #f3faff;
-  --color-error: #ba1a1a;
-  --color-outline-variant: #c3c6d1;
-}
+  /* Brand */
+  --color-navy:       #0a246a;
+  --color-navy-deep:  #071640;
+  --color-navy-tint:  #eef1f9;
+  --color-green:      #86c140;
+  --color-green-dark: #5f9028;
+  --color-green-tint: #f2f8e6;
 
-@layer base {
-  body {
-    @apply font-body bg-background text-on-surface antialiased;
-  }
-}
+  /* Neutrals */
+  --color-ink:        #111827;
+  --color-ink-2:      #374151;
+  --color-muted:      #6b7280;
+  --color-rule:       #e5e7eb;
+  --color-wash:       #f6f7fb;
 
-@layer utilities {
-  .glass-nav {
-    @apply bg-white/70 backdrop-blur-md shadow-[0_12px_48px_rgba(7,30,39,0.06)];
-  }
-  
-  .mesh-gradient {
-    background: radial-gradient(at 0% 0%, rgba(219, 241, 254, 0.5) 0, transparent 50%), 
-                radial-gradient(at 100% 100%, rgba(167, 200, 255, 0.3) 0, transparent 50%);
-  }
+  /* Semantic */
+  --color-on-surface: #111827;
+  --color-background: #ffffff;
+  --color-border:     #e5e7eb;
+  --color-surface:    #f6f7fb;
 }
