@@ -66,20 +66,20 @@ export default function Hero() {
           </h1>
 
           {/* Menu sections */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-gray-100 pt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-gray-100 pt-8">
             {nav.slice(0, 3).map((section) => (
-              <div key={section.label}>
-                <h2 className="text-xs font-bold text-gov-primary uppercase tracking-widest mb-3">
+              <div key={section.label} className="border border-gray-200 rounded-lg p-5">
+                <h2 className="text-sm font-bold text-gov-primary uppercase tracking-widest mb-4">
                   {section.label}
                 </h2>
-                <ul className="space-y-2">
-                  {section.items.map((item) => (
+                <ul className="space-y-3">
+                  {section.items.slice(0, 3).map((item) => (
                     <li key={item.label}>
                       <Link
                         href={item.href}
-                        className="inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-gov-accent transition-colors"
+                        className="inline-flex items-center gap-2 text-base text-gray-700 hover:text-gov-accent transition-colors"
                       >
-                        <ChevronRight className="w-3 h-3 text-gov-gold shrink-0" />
+                        <ChevronRight className="w-3.5 h-3.5 text-gov-gold shrink-0" />
                         {item.label}
                       </Link>
                     </li>
