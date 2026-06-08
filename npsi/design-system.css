@@ -11,17 +11,17 @@
 
 /* ─── Brand Colour Tokens ─────────────────────────────────────────────────── */
 :root {
-  /* Primary — charcoal (header, footer, nav background) */
-  --color-primary:          #2d3748;
-  --color-primary-hover:    #3d4a5c;   /* +10% lightness for press states     */
+  /* Primary — near black (header, footer, nav background) */
+  --color-primary:          #111111;
+  --color-primary-hover:    #2a2a2a;   /* +10% lightness for press states     */
 
   /* Accent — government blue (dropdown links, interactive elements) */
   --color-accent:           #005b96;
   --color-accent-hover:     #0056b3;
 
-  /* Secondary — dark gray hover/focus surfaces on dark backgrounds */
-  --color-secondary:        #4a5568;
-  --color-secondary-hover:  #374151;
+  /* Secondary — mid gray hover/focus surfaces on dark backgrounds */
+  --color-secondary:        #444444;
+  --color-secondary-hover:  #222222;
 
   /* Neutral surface tones */
   --color-surface:          #ffffff;
