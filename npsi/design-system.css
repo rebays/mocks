@@ -1,0 +1,250 @@
+/*
+ * Design System — National Parliament of Solomon Islands
+ * Source: parliament.gov.sb
+ * Generated: 2026-05-21
+ *
+ * Brand palette is anchored in Solomon Islands flag colours:
+ *   Dark forest green (#053219) for authority/government surfaces
+ *   Sky blue (#005b96) for interactive/link states
+ *   Mid green (#3c6642) for hover/focus feedback
+ */
+
+/* ─── Brand Colour Tokens ─────────────────────────────────────────────────── */
+:root {
+  /* Primary — dark forest green (header, footer, nav background) */
+  --color-primary:          #053219;
+  --color-primary-hover:    #083f20;   /* +10% lightness for press states     */
+
+  /* Accent — government blue (dropdown links, interactive elements) */
+  --color-accent:           #005b96;
+  --color-accent-hover:     #0056b3;
+
+  /* Secondary green — hover/focus surfaces on dark backgrounds */
+  --color-secondary:        #3c6642;
+  --color-secondary-hover:  #215221;
+
+  /* Neutral surface tones */
+  --color-surface:          #ffffff;
+  --color-surface-raised:   #f1f1f1;
+  --color-surface-subtle:   #e5e5e5;
+
+  /* Body background gradient (home page) */
+  --color-bg-gradient-start: #e5e5e5;
+  --color-bg-gradient-end:   #cce7ff;
+  --color-bg-gradient:       linear-gradient(to bottom, var(--color-bg-gradient-start), var(--color-bg-gradient-end));
+
+  /* Text */
+  --color-text-primary:     #000000;
+  --color-text-on-dark:     #ffffff;
+  --color-text-muted:       #d1d1d1;   /* footer link colour                  */
+  --color-text-faint:       #666666;   /* dividers and secondary copy         */
+
+  /* Borders */
+  --color-border:           #cccccc;
+  --color-border-faint:     #666666;
+}
+
+/* ─── Typography ──────────────────────────────────────────────────────────── */
+:root {
+  /* Families */
+  --font-body:      Arial, sans-serif;
+  --font-display:   "Roboto", Arial, sans-serif;   /* tabs, sidebar, headings */
+  --font-mono:      "SFMono-Regular", Menlo, Monaco, Consolas, "Courier New", monospace;
+
+  /* Scale (major-third, 1.25 ratio) */
+  --text-xs:        0.75rem;    /* 12px — badges, captions                    */
+  --text-sm:        0.875rem;   /* 14px — secondary labels                    */
+  --text-base:      1rem;       /* 16px — body copy                           */
+  --text-md:        1.25rem;    /* 20px — lead / intro paragraph              */
+  --text-lg:        1.5rem;     /* 24px — h3                                  */
+  --text-xl:        2rem;       /* 32px — h2                                  */
+  --text-2xl:       2.5rem;     /* 40px — h1 / hero                          */
+
+  /* Line heights */
+  --leading-tight:  1.2;
+  --leading-base:   1.5;
+  --leading-loose:  1.75;
+
+  /* Font weights */
+  --weight-normal:  400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+}
+
+/* ─── Spacing ─────────────────────────────────────────────────────────────── */
+:root {
+  /* 4-point base grid */
+  --space-1:   0.25rem;   /*  4px */
+  --space-2:   0.5rem;    /*  8px */
+  --space-3:   0.75rem;   /* 12px */
+  --space-4:   1rem;      /* 16px */
+  --space-5:   1.25rem;   /* 20px */
+  --space-6:   1.5rem;    /* 24px */
+  --space-8:   2rem;      /* 32px */
+  --space-10:  2.5rem;    /* 40px */
+  --space-12:  3rem;      /* 48px */
+  --space-16:  4rem;      /* 64px */
+
+  /* Named semantic aliases */
+  --spacing-xs:   var(--space-1);
+  --spacing-sm:   var(--space-2);
+  --spacing-md:   var(--space-4);
+  --spacing-lg:   var(--space-6);
+  --spacing-xl:   var(--space-10);
+  --spacing-2xl:  var(--space-16);
+
+  /* Nav item padding (matches site) */
+  --nav-item-padding: var(--space-3) var(--space-5);   /* 12px 20px */
+
+  /* Content area padding */
+  --content-padding: var(--space-5);   /* 20px */
+}
+
+/* ─── Border Radius ───────────────────────────────────────────────────────── */
+:root {
+  --radius-sm:   4px;    /* scrollable tabs                     */
+  --radius-md:   5px;    /* nav dropdowns, buttons              */
+  --radius-lg:   10px;   /* main content card                   */
+  --radius-full: 50%;    /* avatars / circular icons            */
+}
+
+/* ─── Shadows ─────────────────────────────────────────────────────────────── */
+:root {
+  --shadow-card:  0 4px 8px rgba(0, 0, 0, 0.10);   /* main content card      */
+  --shadow-sm:    0 2px 4px rgba(0, 0, 0, 0.075);
+  --shadow-lg:    0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── Breakpoints (reference — use in @media queries) ────────────────────── */
+/*
+  xs:   0px      (mobile first baseline)
+  sm:   469px    (header collapses at this point per site CSS)
+  md:   669px    (hamburger threshold per site CSS)
+  lg:   992px    (Bootstrap lg)
+  xl:   1200px   (Bootstrap xl)
+  xxl:  1400px   (Bootstrap xxl)
+*/
+:root {
+  --bp-sm:  469px;
+  --bp-md:  669px;
+  --bp-lg:  992px;
+  --bp-xl:  1200px;
+  --bp-xxl: 1400px;
+}
+
+/* ─── Component Patterns ─────────────────────────────────────────────────── */
+
+/* Header / Navbar */
+.ds-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Primary navigation link */
+.ds-nav-link {
+  color: var(--color-text-on-dark);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  padding: var(--nav-item-padding);
+  display: block;
+}
+
+.ds-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+}
+
+/* Dropdown submenu */
+.ds-submenu {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  min-width: 200px;
+}
+
+.ds-submenu-link {
+  color: var(--color-accent);
+  padding: var(--space-3);
+  display: block;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+}
+
+.ds-submenu-link:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-text-on-dark);
+}
+
+/* Content card (main-content area) */
+.ds-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--content-padding);
+}
+
+/* Footer */
+.ds-footer {
+  background-color: var(--color-primary);
+  color: var(--color-surface-raised);
+  padding: var(--space-10) 0;
+  text-align: center;
+}
+
+.ds-footer-heading {
+  font-size: var(--text-md);      /* 18px matches site */
+  color: var(--color-surface-raised);
+  text-transform: uppercase;
+  margin-bottom: var(--space-4);
+}
+
+.ds-footer-link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: var(--text-base);
+}
+
+.ds-footer-link:hover {
+  color: var(--color-text-on-dark);
+}
+
+.ds-footer-divider {
+  border: 0;
+  border-top: 1px solid var(--color-border-faint);
+  margin: var(--space-5) 0;
+}
+
+/* Scrollable tab bar */
+.ds-tab-bar {
+  font-family: var(--font-display);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.ds-tab {
+  color: var(--color-text-primary);
+  background: var(--color-surface-raised);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  white-space: nowrap;
+  font-size: var(--text-sm);
+}
+
+.ds-tab.active {
+  background: var(--color-text-primary);
+  color: var(--color-text-on-dark);
+}
+
+/* Page body background */
+.ds-page-bg {
+  background: var(--color-bg-gradient);
+}

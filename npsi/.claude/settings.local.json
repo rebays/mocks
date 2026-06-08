@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://parliament.gov.sb/css/style.home.index.design2.css?v=1779290009\")",
+      "Bash(curl -s \"https://parliament.gov.sb/css/style.footer.design2.css?v=1779290009\")",
+      "Bash(curl -s \"https://parliament.gov.sb/css/scrollslidebar_home.css?v=1779290009\")"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Brand colours ───────────────────────────────────────────── */
+  --color-gov-primary:        #053219;
+  --color-gov-primary-hover:  #083f20;
+  --color-gov-accent:         #005b96;
+  --color-gov-accent-hover:   #004a7d;
+  --color-gov-green:          #3c6642;
+  --color-gov-green-dark:     #215221;
+  --color-gov-gold:           #ffc720;
+  --color-gov-gold-dark:      #d4a017;
+
+  /* ── Typography ──────────────────────────────────────────────── */
+  --font-sans:    "Roboto", Arial, "Helvetica Neue", sans-serif;
+  --font-display: "Roboto", Arial, sans-serif;
+
+  /* ── Custom breakpoints matching the site's own thresholds ───── */
+  --breakpoint-nav: 69rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-800 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold leading-tight;
+  }
+
+  a {
+    @apply transition-colors duration-150;
+  }
+
+  /* Focus ring that uses brand accent */
+  :focus-visible {
+    outline: 2px solid #005b96;
+    outline-offset: 2px;
+  }
+}
+
+/* ── Utility helpers ─────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Gold underline accent used on section headings */
+  .heading-accent {
+    position: relative;
+    padding-bottom: 0.75rem;
+  }
+  .heading-accent::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3rem;
+    height: 3px;
+    background: #ffc720;
+    border-radius: 2px;
+  }
+  .heading-accent-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Page hero gradient */
+  .hero-gradient {
+    background: linear-gradient(150deg, #053219 0%, #0a4d28 40%, #005b96 100%);
+  }
+
+  /* Inner page banner */
+  .page-banner {
+    background: linear-gradient(135deg, #053219 0%, #083f20 100%);
+  }
+
+  /* Category badge colours */
+  .badge-legislation { @apply bg-blue-100 text-blue-800; }
+  .badge-events      { @apply bg-purple-100 text-purple-800; }
+  .badge-community   { @apply bg-green-100 text-green-800; }
+  .badge-committees  { @apply bg-amber-100 text-amber-800; }
+  .badge-general     { @apply bg-gray-100 text-gray-700; }
+  .badge-media       { @apply bg-rose-100 text-rose-800; }
+}
