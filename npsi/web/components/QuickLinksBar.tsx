@@ -20,7 +20,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export default function QuickLinksBar() {
   return (
-    <div className="bg-gov-primary-hover border-b border-white/10">
+    <div className="bg-gov-primary-hover border-b border-white/10 pt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 overflow-x-auto">
         <ul className="flex items-center gap-2 min-w-max sm:min-w-0 sm:flex-wrap sm:justify-center">
           {quickLinks.map((link) => (
