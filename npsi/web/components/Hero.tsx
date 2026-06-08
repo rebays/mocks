@@ -14,8 +14,6 @@ export default function Hero() {
           priority
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gov-primary/70" />
-
         {/* Decorative SVG grid */}
         <div className="absolute inset-0 opacity-5">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
