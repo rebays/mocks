@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Play, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
+import { nav } from "@/lib/data";
 
 export default function Hero() {
   return (
@@ -49,7 +50,7 @@ export default function Hero() {
 
       {/* ── CTA card — overlaps hero bottom border ───────────────── */}
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 translate-y-12">
-        <div className="max-w-2xl bg-white rounded-xl p-8 sm:p-10 shadow-2xl">
+        <div className="bg-white rounded-xl p-8 sm:p-10 shadow-2xl">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gov-gold/15 border border-gov-gold/40 mb-5">
             <span className="w-2 h-2 rounded-full bg-gov-gold animate-pulse" />
@@ -59,34 +60,33 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gov-primary leading-tight text-balance mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gov-primary leading-tight mb-8">
             Welcome to{" "}
             <span className="text-gov-accent">Solomon Islands Parliament</span>
           </h1>
 
-          {/* Sub-headline */}
-          <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
-            The supreme legislative body of the nation — representing 50
-            constituencies across the islands, making laws for the peace, order,
-            and good government of Solomon Islands.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-4">
-            <Link
-              href="/business"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gov-gold text-gov-primary font-bold rounded-lg hover:bg-gov-gold-dark transition-colors shadow-md hover:shadow-lg"
-            >
-              View Current Bills
-              <ChevronRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/media"
-              className="inline-flex items-center gap-2 px-6 py-3 border-2 border-gov-primary/25 text-gov-primary font-semibold rounded-lg hover:bg-gov-primary hover:text-white transition-colors"
-            >
-              <Play className="w-4 h-4" />
-              Watch Live
-            </Link>
+          {/* Menu sections */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-gray-100 pt-8">
+            {nav.slice(0, 3).map((section) => (
+              <div key={section.label}>
+                <h2 className="text-xs font-bold text-gov-primary uppercase tracking-widest mb-3">
+                  {section.label}
+                </h2>
+                <ul className="space-y-2">
+                  {section.items.map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        className="inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-gov-accent transition-colors"
+                      >
+                        <ChevronRight className="w-3 h-3 text-gov-gold shrink-0" />
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>
