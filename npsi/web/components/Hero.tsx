@@ -14,6 +14,7 @@ export default function Hero() {
           priority
           className="object-cover object-center"
         />
+        <div className="absolute inset-0 bg-gov-primary/70" />
         {/* Decorative SVG grid */}
         <div className="absolute inset-0 opacity-5">
           <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
@@ -45,20 +46,20 @@ export default function Hero() {
       {/* ── Spacer pushes card to bottom ────────────────────────── */}
       <div className="flex-1" />
 
-      {/* ── CTA card — overlaps hero bottom border ───────────────── */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 translate-y-12">
-        <div className="bg-white rounded-xl p-8 sm:p-10 shadow-2xl">
+      {/* ── CTA card — centered, overlaps hero bottom border ───────── */}
+      <div className="relative z-10 w-full px-6 translate-y-12 flex justify-center">
+        <div className="w-full max-w-4xl bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 sm:p-10 shadow-2xl">
           {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl font-bold text-gov-primary leading-tight mb-8">
+          <h1 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-8">
             Welcome to{" "}
-            <span className="text-gov-accent">Solomon Islands Parliament</span>
+            <span className="text-gov-gold">Solomon Islands Parliament</span>
           </h1>
 
           {/* Menu sections */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-gray-100 pt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-white/20 pt-8">
             {nav.slice(0, 3).map((section) => (
-              <div key={section.label} className="border border-gray-200 rounded-lg p-5">
-                <h2 className="text-sm font-bold text-gov-primary uppercase tracking-widest mb-4">
+              <div key={section.label} className="border border-white/20 rounded-lg p-5">
+                <h2 className="text-xs font-bold text-white/60 uppercase tracking-widest mb-4">
                   {section.label}
                 </h2>
                 <ul className="space-y-3">
@@ -66,7 +67,7 @@ export default function Hero() {
                     <li key={item.label}>
                       <Link
                         href={item.href}
-                        className="text-base text-gray-700 hover:text-gov-accent transition-colors"
+                        className="text-base text-white/80 hover:text-white transition-colors"
                       >
                         {item.label}
                       </Link>
