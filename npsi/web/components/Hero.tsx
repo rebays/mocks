@@ -45,7 +45,7 @@ export default function Hero() {
 
       {/* ── Content ─────────────────────────────────────────────── */}
       <div className="relative max-w-7xl mx-auto px-6 py-20">
-        <div className="max-w-2xl">
+        <div className="max-w-2xl bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 sm:p-10 shadow-2xl">
           {/* Eyebrow */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gov-gold/20 border border-gov-gold/40 mb-6">
             <span className="w-2 h-2 rounded-full bg-gov-gold animate-pulse" />
@@ -55,13 +55,13 @@ export default function Hero() {
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight text-balance mb-6">
-            National Parliament of{" "}
-            <span className="text-gov-gold">Solomon Islands</span>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight text-balance mb-4">
+            Welcome to{" "}
+            <span className="text-gov-gold">Solomon Islands Parliament</span>
           </h1>
 
           {/* Sub-headline */}
-          <p className="text-white/75 text-lg sm:text-xl leading-relaxed mb-10 max-w-xl">
+          <p className="text-white/75 text-base sm:text-lg leading-relaxed mb-8">
             The supreme legislative body of the nation — representing 50
             constituencies across the islands, making laws for the peace, order,
             and good government of Solomon Islands.
