@@ -1,9 +1,21 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Play, ChevronRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[92vh] flex items-center hero-gradient overflow-hidden">
+    <section className="relative min-h-[92vh] flex items-center overflow-hidden">
+      {/* ── Hero background image ────────────────────────────────── */}
+      <Image
+        src="/hero.png"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center"
+      />
+      {/* ── Dark overlay for text legibility ────────────────────── */}
+      <div className="absolute inset-0 bg-gov-primary/70" />
+
       {/* ── Decorative SVG pattern overlay ──────────────────────── */}
       <div className="absolute inset-0 opacity-5">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">

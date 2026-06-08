@@ -2,12 +2,12 @@
 
 @theme {
   /* ── Brand colours ───────────────────────────────────────────── */
-  --color-gov-primary:        #053219;
-  --color-gov-primary-hover:  #083f20;
+  --color-gov-primary:        #2d3748;
+  --color-gov-primary-hover:  #3d4a5c;
   --color-gov-accent:         #005b96;
   --color-gov-accent-hover:   #004a7d;
-  --color-gov-green:          #3c6642;
-  --color-gov-green-dark:     #215221;
+  --color-gov-green:          #4a5568;
+  --color-gov-green-dark:     #374151;
   --color-gov-gold:           #ffc720;
   --color-gov-gold-dark:      #d4a017;
 
@@ -71,12 +71,12 @@
 
   /* Page hero gradient */
   .hero-gradient {
-    background: linear-gradient(150deg, #053219 0%, #0a4d28 40%, #005b96 100%);
+    background: linear-gradient(150deg, #2d3748 0%, #4a5568 40%, #005b96 100%);
   }
 
   /* Inner page banner */
   .page-banner {
-    background: linear-gradient(135deg, #053219 0%, #083f20 100%);
+    background: linear-gradient(135deg, #2d3748 0%, #3d4a5c 100%);
   }
 
   /* Category badge colours */

@@ -3,25 +3,25 @@
  * Source: parliament.gov.sb
  * Generated: 2026-05-21
  *
- * Brand palette is anchored in Solomon Islands flag colours:
- *   Dark forest green (#053219) for authority/government surfaces
+ * Brand palette:
+ *   Charcoal (#2d3748) for authority/government surfaces
  *   Sky blue (#005b96) for interactive/link states
- *   Mid green (#3c6642) for hover/focus feedback
+ *   Dark gray (#4a5568) for hover/focus feedback
  */
 
 /* ─── Brand Colour Tokens ─────────────────────────────────────────────────── */
 :root {
-  /* Primary — dark forest green (header, footer, nav background) */
-  --color-primary:          #053219;
-  --color-primary-hover:    #083f20;   /* +10% lightness for press states     */
+  /* Primary — charcoal (header, footer, nav background) */
+  --color-primary:          #2d3748;
+  --color-primary-hover:    #3d4a5c;   /* +10% lightness for press states     */
 
   /* Accent — government blue (dropdown links, interactive elements) */
   --color-accent:           #005b96;
   --color-accent-hover:     #0056b3;
 
-  /* Secondary green — hover/focus surfaces on dark backgrounds */
-  --color-secondary:        #3c6642;
-  --color-secondary-hover:  #215221;
+  /* Secondary — dark gray hover/focus surfaces on dark backgrounds */
+  --color-secondary:        #4a5568;
+  --color-secondary-hover:  #374151;
 
   /* Neutral surface tones */
   --color-surface:          #ffffff;

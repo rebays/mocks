@@ -5,12 +5,12 @@
  */
 
 export const colors = {
-  primary:         "#053219",   // dark forest green — header / footer / nav bg
-  primaryHover:    "#083f20",
+  primary:         "#2d3748",   // charcoal — header / footer / nav bg
+  primaryHover:    "#3d4a5c",
   accent:          "#005b96",   // government blue — links, interactive
   accentHover:     "#0056b3",
-  secondary:       "#3c6642",   // mid green — hover surfaces
-  secondaryHover:  "#215221",
+  secondary:       "#4a5568",   // dark gray — hover surfaces
+  secondaryHover:  "#374151",
 
   surface:         "#ffffff",
   surfaceRaised:   "#f1f1f1",
