@@ -1,6 +1,4 @@
 import Hero from "@/components/Hero";
-import QuickLinksBar from "@/components/QuickLinksBar";
-import StatsBanner from "@/components/StatsBanner";
 import NewsGrid from "@/components/NewsGrid";
 import HighlightsSection from "@/components/HighlightsSection";
 import Link from "next/link";
@@ -10,8 +8,6 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <QuickLinksBar />
-      <StatsBanner />
       <HighlightsSection />
       <NewsGrid />
 

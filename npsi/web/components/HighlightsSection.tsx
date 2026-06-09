@@ -33,7 +33,7 @@ const highlights = [
 
 export default function HighlightsSection() {
   return (
-    <section className="py-16 sm:py-20 bg-white">
+    <section className="pt-28 pb-16 sm:pb-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {highlights.map((h) => (
