@@ -51,23 +51,22 @@ export default function Hero() {
         <div className="bg-white border border-gray-100 rounded-xl p-8 sm:p-10 shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl font-bold text-gov-primary leading-tight mb-8">
-            Welcome to{" "}
-            <span className="text-gov-accent">Solomon Islands Parliament</span>
+            Welcome to Solomon Islands Parliament
           </h1>
 
           {/* Menu sections */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {nav.slice(0, 3).map((section) => (
               <div key={section.label}>
-                <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
+                <h2 className="text-sm font-bold text-gray-800 uppercase tracking-widest mb-3">
                   {section.label}
                 </h2>
-                <ul className="space-y-2">
+                <ul className="border border-gray-200 rounded-md divide-y divide-gray-200">
                   {section.items.slice(0, 3).map((item) => (
-                    <li key={item.label} className="border border-gray-200 rounded-md">
+                    <li key={item.label}>
                       <Link
                         href={item.href}
-                        className="block px-3 py-2 text-base text-gray-700 hover:text-gov-accent transition-colors"
+                        className="block px-3 py-2 text-base text-gov-accent hover:text-gov-primary transition-colors"
                       >
                         {item.label}
                       </Link>
