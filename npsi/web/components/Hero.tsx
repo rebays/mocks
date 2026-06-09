@@ -56,8 +56,15 @@ export default function Hero() {
         }}
       />
 
-      {/* ── Layer 3: Heading + dots — z-20 ──────────────────────── */}
-      <div className="relative z-20 flex-1 flex flex-col justify-end w-full max-w-7xl mx-auto px-4 sm:px-6 pb-6">
+      {/* ── Layer 3: Wave bottom edge — z-20 ────────────────────── */}
+      <div className="absolute bottom-0 left-0 right-0 z-20">
+        <svg viewBox="0 0 1440 90" preserveAspectRatio="none" className="w-full h-16 sm:h-20 block">
+          <path d="M0,0 C240,90 480,0 720,45 C960,90 1200,20 1440,60 L1440,90 L0,90 Z" fill="#f3f4f6" />
+        </svg>
+      </div>
+
+      {/* ── Layer 4: Heading + dots — z-30 ──────────────────────── */}
+      <div className="relative z-30 flex-1 flex flex-col justify-end w-full max-w-7xl mx-auto px-4 sm:px-6 pb-6">
         <h1
           key={current}
           className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6 animate-fade-in"
@@ -81,8 +88,8 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Layer 4: CTA card — z-20 ─────────────────────────────── */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 translate-y-1/2">
+      {/* ── Layer 5: CTA card — z-30 ─────────────────────────────── */}
+      <div className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 translate-y-1/2">
         <div className="bg-white border border-gray-100 rounded-xl p-8 sm:p-10 shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {nav.slice(0, 3).map((section) => (
