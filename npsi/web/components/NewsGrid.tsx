@@ -1,6 +1,5 @@
 import Link from "next/link";
 import NewsCard from "./NewsCard";
-import SectionHeading from "./SectionHeading";
 import { news } from "@/lib/data";
 
 export default function NewsGrid() {
@@ -8,10 +7,12 @@ export default function NewsGrid() {
     <section className="bg-gray-50 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-10">
-          <SectionHeading label="Latest from Parliament" title="News & Updates" />
+          <h2 className="text-3xl sm:text-4xl font-bold text-gov-primary">
+            News & Updates
+          </h2>
           <Link
             href="/media"
-            className="shrink-0 text-sm font-semibold text-gov-accent hover:underline"
+            className="shrink-0 text-base font-semibold text-gov-accent hover:underline"
           >
             View all
           </Link>
