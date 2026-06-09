@@ -46,7 +46,7 @@ export default function HighlightsSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {highlights.map((h) => (
-            <div key={h.label} className="rounded-2xl p-8 flex flex-col group border border-gray-200">
+            <div key={h.label} className="rounded-2xl p-8 flex flex-col group border border-gray-200 bg-white">
               {/* Icon */}
               <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-6 bg-gray-100 text-gov-primary">
                 {h.icon}
