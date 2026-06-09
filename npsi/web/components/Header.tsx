@@ -40,7 +40,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20 lg:h-20">
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <div className="relative h-10 w-56">
+            <div className="relative h-14 w-72">
               <Image
                 src="/logo.jpg"
                 alt="National Parliament of Solomon Islands"
