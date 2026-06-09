@@ -35,13 +35,19 @@ export default function Hero() {
               i === current ? "opacity-100" : "opacity-0"
             }`}
           >
-            <Image
-              src={slide.image}
-              alt=""
-              fill
-              priority={i === 0}
-              className="object-cover object-center"
-            />
+            <div
+              className={`absolute inset-0 transition-transform duration-[7000ms] ease-out ${
+                i === current ? "scale-110" : "scale-100"
+              }`}
+            >
+              <Image
+                src={slide.image}
+                alt=""
+                fill
+                priority={i === 0}
+                className="object-cover object-center"
+              />
+            </div>
           </div>
         ))}
         <div className="absolute inset-0 bg-gov-primary/70" />
