@@ -39,7 +39,7 @@ export default function HighlightsSection() {
           alt=""
           width={700}
           height={700}
-          className="opacity-5 object-contain"
+          className="opacity-20 object-contain"
         />
       </div>
 
