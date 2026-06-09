@@ -43,17 +43,16 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Spacer pushes card to bottom ────────────────────────── */}
-      <div className="flex-1" />
+      {/* ── Welcome heading — centered over image ───────────────── */}
+      <div className="relative z-10 flex-1 flex items-center justify-center px-4 py-12">
+        <h1 className="text-4xl sm:text-5xl font-bold text-white text-center leading-tight">
+          Welcome to Solomon Islands Parliament
+        </h1>
+      </div>
 
       {/* ── CTA card — overlaps hero bottom border ───────────────── */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 translate-y-1/2">
         <div className="bg-white border border-gray-100 rounded-xl p-8 sm:p-10 shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
-          {/* Headline */}
-          <h1 className="text-3xl sm:text-4xl font-bold text-gov-primary leading-tight mb-8">
-            Welcome to Solomon Islands Parliament
-          </h1>
-
           {/* Menu sections */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {nav.slice(0, 3).map((section) => (
