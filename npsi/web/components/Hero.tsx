@@ -43,9 +43,9 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ── Welcome heading — centered over image ───────────────── */}
-      <div className="relative z-10 flex-1 flex items-center justify-center px-4 py-12">
-        <h1 className="text-4xl sm:text-5xl font-bold text-white text-center leading-tight">
+      {/* ── Welcome heading — left-aligned, above CTA ───────────── */}
+      <div className="relative z-10 flex-1 flex items-end w-full max-w-7xl mx-auto px-4 sm:px-6 pb-10">
+        <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
           Welcome to Solomon Islands Parliament
         </h1>
       </div>
