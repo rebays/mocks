@@ -67,7 +67,7 @@ export default function Header() {
                 </button>
 
                 {/* Full-width dropdown panel — positioned relative to <header> */}
-                <div className="absolute top-full left-0 right-0 min-h-96 bg-gov-primary shadow-2xl invisible opacity-0 group-hover:visible group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-10 border-t-2 border-gov-gold overflow-hidden">
+                <div className="absolute top-full left-0 right-0 min-h-96 bg-gov-primary shadow-2xl invisible opacity-0 group-hover:visible group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-10 overflow-hidden">
                   {/* Decorative ring — inverted to white */}
                   <div className="absolute inset-0 pointer-events-none">
                     <Image
