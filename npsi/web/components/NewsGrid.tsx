@@ -5,7 +5,7 @@ import { news } from "@/lib/data";
 
 export default function NewsGrid() {
   return (
-    <section className="bg-white py-16 sm:py-20">
+    <section className="bg-gray-50 py-16 sm:py-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between mb-10">
           <SectionHeading label="Latest from Parliament" title="News & Updates" />
