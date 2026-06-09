@@ -40,16 +40,17 @@ export default function Header() {
 
       {/* ── Main nav bar ────────────────────────────────────────── */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-20 lg:h-20">
+        <div className="flex items-center justify-between h-28 lg:h-28">
           {/* Logo */}
           <Link href="/" className="shrink-0">
-            <div className="relative h-14 w-72">
+            <div className="relative h-20 w-96">
               <Image
-                src="/logo.jpg"
+                src="/SIG-LOGO (1).png"
                 alt="National Parliament of Solomon Islands"
                 fill
                 priority
                 className="object-contain object-left"
+                style={{ filter: "brightness(0) invert(1)" }}
               />
             </div>
           </Link>
@@ -62,7 +63,7 @@ export default function Header() {
           >
             {nav.map((section, i) => (
               <li key={i} className="group">
-                <button className="px-3.5 py-2 text-white text-sm font-medium uppercase tracking-wide rounded hover:text-gov-gold transition-colors duration-150">
+                <button className="px-3.5 py-2 text-white text-sm font-medium uppercase tracking-wide rounded hover:text-gov-gold transition-colors duration-150 cursor-pointer">
                   {section.label}
                 </button>
 
@@ -108,18 +109,40 @@ export default function Header() {
       </nav>
 
       {/* ── Next sitting banner ─────────────────────────────────── */}
-      <div className="relative z-20 border-t border-white/10 bg-black/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-center gap-3">
-          <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-gov-gold text-gov-primary text-[10px] font-bold uppercase tracking-widest shrink-0">
-            <Calendar className="w-3 h-3" />
-            Upcoming
-          </span>
-          <span className="text-sm text-white/75">
-            Next Parliament Sitting —{" "}
-            <span className="text-white font-medium">Tuesday, 27 June 2026</span>
-            <span className="text-white/40 mx-2">·</span>
-            Parliament Chamber, Honiara
-          </span>
+      <div className="relative z-20 border-t border-white/10 bg-black/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4">
+
+          {/* Left: indicator + info */}
+          <div className="flex items-center gap-4 min-w-0">
+            {/* Pulsing dot + label */}
+            <div className="hidden sm:flex items-center gap-2 shrink-0">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gov-gold opacity-60" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-gov-gold" />
+              </span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-gov-gold">Next Sitting</span>
+            </div>
+
+            {/* Divider */}
+            <span className="hidden sm:block h-4 w-px bg-white/20 shrink-0" />
+
+            {/* Date + location */}
+            <div className="flex items-center gap-2 text-sm min-w-0">
+              <Calendar className="w-3.5 h-3.5 text-white/40 shrink-0" />
+              <span className="text-white font-medium whitespace-nowrap">Tuesday, 27 June 2026</span>
+              <span className="text-white/30 hidden sm:inline">·</span>
+              <span className="text-white/55 truncate hidden sm:inline">Parliament Chamber, Honiara</span>
+            </div>
+          </div>
+
+          {/* Right: CTA */}
+          <Link
+            href="/business"
+            className="text-[11px] font-semibold uppercase tracking-widest text-gov-gold hover:text-white transition-colors shrink-0"
+          >
+            View Schedule →
+          </Link>
+
         </div>
       </div>
 
