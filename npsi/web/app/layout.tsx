@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${sourceSans.variable} ${playfair.variable}`}>
       <body className="bg-white min-h-screen flex flex-col font-[family-name:var(--font-sans-body)]">
         <Header />
-        <main id="main-content" className="flex-1 pt-32">
+        <main id="main-content" className="flex-1 pt-[11rem]">
           {children}
         </main>
         <Footer />
