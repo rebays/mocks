@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,8 +11,22 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSection, setOpenSection] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const [navHovered, setNavHovered] = useState(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openMenu = (i: number) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setOpenIndex(i);
+  };
+
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => setOpenIndex(null), 150);
+  };
+
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+  };
 
   useEffect(() => {
     setMounted(true);
@@ -56,19 +70,25 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <ul
-            className="hidden lg:flex items-center gap-0.5"
-            onMouseEnter={() => setNavHovered(true)}
-            onMouseLeave={() => setNavHovered(false)}
-          >
+          <ul className="hidden lg:flex items-center gap-0.5">
             {nav.map((section, i) => (
-              <li key={i} className="group">
-                <button className="px-3.5 py-2 text-white text-sm font-medium uppercase tracking-wide rounded hover:text-gov-gold transition-colors duration-150 cursor-pointer">
+              <li
+                key={i}
+                onMouseEnter={() => openMenu(i)}
+                onMouseLeave={scheduleClose}
+              >
+                <button className={`px-3.5 py-2 text-sm font-medium uppercase tracking-wide rounded transition-colors duration-150 cursor-pointer ${openIndex === i ? "text-gov-gold" : "text-white hover:text-gov-gold"}`}>
                   {section.label}
                 </button>
 
                 {/* Full-width dropdown panel — positioned relative to <header> */}
-                <div className="absolute top-full left-0 right-0 min-h-96 bg-gov-primary shadow-2xl invisible opacity-0 group-hover:visible group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-10 overflow-hidden">
+                <div
+                  onMouseEnter={cancelClose}
+                  onMouseLeave={() => setOpenIndex(null)}
+                  className={`absolute top-full left-0 right-0 min-h-96 bg-gov-primary shadow-2xl transition-all duration-200 z-10 overflow-hidden ${
+                    openIndex === i ? "visible opacity-100 translate-y-0" : "invisible opacity-0 translate-y-2"
+                  }`}
+                >
                   {/* Decorative ring — inverted to white */}
                   <div className="absolute inset-0 pointer-events-none">
                     <Image
@@ -194,7 +214,7 @@ export default function Header() {
       {mounted && createPortal(
         <div
           className={`fixed inset-0 pointer-events-none transition-opacity duration-300 ${
-            navHovered ? "opacity-100" : "opacity-0"
+            openIndex !== null ? "opacity-100" : "opacity-0"
           }`}
           style={{ backgroundColor: "rgba(0,0,0,0.55)", zIndex: 40 }}
         />,

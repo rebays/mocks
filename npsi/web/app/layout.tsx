@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Roboto, Playfair_Display } from "next/font/google";
+import { Source_Sans_3, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const roboto = Roboto({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["300", "400", "600", "700"],
   display: "swap",
-  variable: "--font-roboto",
+  variable: "--font-sans-body",
 });
 
 const playfair = Playfair_Display({
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${roboto.variable} ${playfair.variable}`}>
-      <body className="bg-white min-h-screen flex flex-col">
+    <html lang="en" className={`${sourceSans.variable} ${playfair.variable}`}>
+      <body className="bg-white min-h-screen flex flex-col font-[family-name:var(--font-sans-body)]">
         <Header />
         <main id="main-content" className="flex-1 pt-32">
           {children}

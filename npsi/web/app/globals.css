@@ -8,12 +8,12 @@
   --color-gov-accent-hover:   #004a7d;
   --color-gov-green:          #444444;
   --color-gov-green-dark:     #222222;
-  --color-gov-gold:           #ffc720;
-  --color-gov-gold-dark:      #d4a017;
+  --color-gov-gold:           #1db863;
+  --color-gov-gold-dark:      #158a47;
 
   /* ── Typography ──────────────────────────────────────────────── */
-  --font-sans:    "Roboto", Arial, "Helvetica Neue", sans-serif;
-  --font-display: "Roboto", Arial, sans-serif;
+  --font-sans:    var(--font-sans-body), "Source Sans 3", Arial, sans-serif;
+  --font-display: var(--font-sans-body), "Source Sans 3", Arial, sans-serif;
 
   /* ── Custom breakpoints matching the site's own thresholds ───── */
   --breakpoint-nav: 69rem;
@@ -22,6 +22,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 18px;
   }
 
   body {
@@ -45,6 +46,11 @@
 
 /* ── Utility helpers ─────────────────────────────────────────────────────── */
 @layer utilities {
+  /* Disable uppercase site-wide */
+  .uppercase {
+    text-transform: none;
+  }
+
   @keyframes fade-in {
     from { opacity: 0; transform: translateY(6px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -69,7 +75,7 @@
     left: 0;
     width: 3rem;
     height: 3px;
-    background: #ffc720;
+    background: #1db863;
     border-radius: 2px;
   }
   .heading-accent-center::after {

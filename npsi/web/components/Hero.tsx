@@ -47,12 +47,17 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* ── Layer 2: Gradient overlay — z-10 ────────────────────── */}
+      {/* ── Layer 2: Mesh gradient overlay — z-10 ───────────────── */}
       <div
         className="absolute inset-0 z-10"
         style={{
-          background:
-            "linear-gradient(to right, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.4) 75%, transparent 100%)",
+          background: [
+            "radial-gradient(ellipse 90% 90% at 0% 100%, rgba(5,50,25,0.95) 0%, rgba(5,50,25,0.4) 45%, transparent 70%)",
+            "radial-gradient(ellipse 60% 70% at 5% 30%, rgba(0,30,60,0.75) 0%, rgba(0,30,60,0.2) 50%, transparent 70%)",
+            "radial-gradient(ellipse 80% 50% at 50% 110%, rgba(0,0,0,0.75) 0%, transparent 60%)",
+            "radial-gradient(ellipse 40% 60% at 95% 5%,  rgba(0,0,0,0.35) 0%, transparent 55%)",
+            "radial-gradient(ellipse 35% 45% at 85% 90%, rgba(0,0,0,0.30) 0%, transparent 50%)",
+          ].join(", "),
         }}
       />
 
