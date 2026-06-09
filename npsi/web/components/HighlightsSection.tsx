@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Users, BookOpen, ClipboardList, ArrowRight } from "lucide-react";
 
@@ -30,8 +31,20 @@ const highlights = [
 
 export default function HighlightsSection() {
   return (
-    <section className="pt-64 pb-16 sm:pb-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative pt-64 pb-16 sm:pb-20 bg-white">
+      {/* ── Decorative background ring — z-0 ─────────────────────── */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <Image
+          src="/traditional_ring.png"
+          alt=""
+          width={700}
+          height={700}
+          className="opacity-5 object-contain"
+        />
+      </div>
+
+      {/* ── Content — z-10 ───────────────────────────────────────── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {highlights.map((h) => (
             <div key={h.label} className="rounded-2xl p-8 flex flex-col group border border-gray-200">
