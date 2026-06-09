@@ -31,7 +31,7 @@ const highlights = [
 
 export default function HighlightsSection() {
   return (
-    <section className="relative pt-64 pb-16 sm:pb-20 bg-white">
+    <section className="relative pt-64 pb-16 sm:pb-20 bg-gray-100">
       {/* ── Decorative background ring — z-0 ─────────────────────── */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <Image
