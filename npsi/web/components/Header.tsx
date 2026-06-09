@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown, Calendar } from "lucide-react";
@@ -10,8 +11,11 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openSection, setOpenSection] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [navHovered, setNavHovered] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -21,6 +25,7 @@ export default function Header() {
     setOpenSection(openSection === i ? null : i);
 
   return (
+    <>
     <header
       className="fixed top-0 left-0 right-0 z-50 bg-gov-primary shadow-[0_4px_24px_rgba(0,0,0,0.5)] transition-shadow duration-300"
     >
@@ -50,25 +55,42 @@ export default function Header() {
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden lg:flex items-center gap-0.5">
+          <ul
+            className="hidden lg:flex items-center gap-0.5"
+            onMouseEnter={() => setNavHovered(true)}
+            onMouseLeave={() => setNavHovered(false)}
+          >
             {nav.map((section, i) => (
-              <li key={i} className="group relative">
-                <button className="flex items-center gap-1 px-3.5 py-2 text-white text-sm font-medium uppercase tracking-wide rounded hover:text-gov-gold transition-colors duration-150">
+              <li key={i} className="group">
+                <button className="px-3.5 py-2 text-white text-sm font-medium uppercase tracking-wide rounded hover:text-gov-gold transition-colors duration-150">
                   {section.label}
-                  <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
                 </button>
 
-                {/* Dropdown panel */}
-                <div className="absolute top-full left-0 min-w-52 bg-white rounded-b-lg shadow-2xl invisible opacity-0 group-hover:visible group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition-all duration-200 z-50 overflow-hidden border-t-2 border-gov-gold">
-                  {section.items.map((item, j) => (
-                    <Link
-                      key={j}
-                      href={item.href}
-                      className="block px-4 py-2.5 text-gray-800 hover:bg-gov-primary hover:text-white text-sm transition-colors duration-100 border-b border-gray-50 last:border-0"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
+                {/* Full-width dropdown panel — positioned relative to <header> */}
+                <div className="absolute top-full left-0 right-0 min-h-96 bg-gov-primary shadow-2xl invisible opacity-0 group-hover:visible group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-200 z-10 border-t-2 border-gov-gold overflow-hidden">
+                  {/* Decorative ring — inverted to white */}
+                  <div className="absolute inset-0 pointer-events-none">
+                    <Image
+                      src="/traditional_ring.png"
+                      alt=""
+                      fill
+                      className="object-cover object-center opacity-[0.32]"
+                      style={{ filter: "brightness(0) invert(1)" }}
+                    />
+                  </div>
+                  <div className="relative max-w-7xl mx-auto px-6 py-10">
+                    <div className="columns-3 gap-x-16">
+                      {section.items.map((item, j) => (
+                        <Link
+                          key={j}
+                          href={item.href}
+                          className="block py-3.5 text-lg text-white/70 hover:text-white border-b border-white/10 hover:border-white/30 underline-offset-4 hover:underline transition-colors duration-100 break-inside-avoid"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </li>
             ))}
@@ -86,7 +108,7 @@ export default function Header() {
       </nav>
 
       {/* ── Next sitting banner ─────────────────────────────────── */}
-      <div className="border-t border-white/10 bg-black/20">
+      <div className="relative z-20 border-t border-white/10 bg-black/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 flex items-center justify-center gap-3">
           <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-sm bg-gov-gold text-gov-primary text-[10px] font-bold uppercase tracking-widest shrink-0">
             <Calendar className="w-3 h-3" />
@@ -144,5 +166,17 @@ export default function Header() {
         </div>
       </div>
     </header>
+
+      {/* ── Page overlay — rendered in body, below header (z-40 < z-50) ── */}
+      {mounted && createPortal(
+        <div
+          className={`fixed inset-0 pointer-events-none transition-opacity duration-300 ${
+            navHovered ? "opacity-100" : "opacity-0"
+          }`}
+          style={{ backgroundColor: "rgba(0,0,0,0.55)", zIndex: 40 }}
+        />,
+        document.body
+      )}
+    </>
   );
 }
