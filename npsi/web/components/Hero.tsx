@@ -59,7 +59,7 @@ export default function Hero() {
       {/* ── Layer 3: Wave bottom edge — z-20 ────────────────────── */}
       <div className="absolute bottom-0 left-0 right-0 z-20">
         <svg viewBox="0 0 1440 90" preserveAspectRatio="none" className="w-full h-16 sm:h-20 block">
-          <path d="M0,0 C240,90 480,0 720,45 C960,90 1200,20 1440,60 L1440,90 L0,90 Z" fill="#f3f4f6" />
+          <path d="M0,0 Q720,90 1440,0 L1440,90 L0,90 Z" fill="#f3f4f6" />
         </svg>
       </div>
 
@@ -67,7 +67,7 @@ export default function Hero() {
       <div className="relative z-30 flex-1 flex flex-col justify-end w-full max-w-7xl mx-auto px-4 sm:px-6 pb-6">
         <h1
           key={current}
-          className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6 animate-fade-in"
+          className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl font-bold text-white leading-tight mb-6 animate-fade-in"
         >
           {slides[current].heading}
         </h1>
