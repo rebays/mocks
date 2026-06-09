@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-gov-primary text-white">
       <div className="h-1 bg-gov-gold" />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-white/60">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-base text-white/60">
         <p>© {new Date().getFullYear()} National Parliament of Solomon Islands</p>
         <div className="flex divide-x divide-white/20">
           <Link href="/about" className="px-4 hover:text-white transition-colors">Privacy</Link>
