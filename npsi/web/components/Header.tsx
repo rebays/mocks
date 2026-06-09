@@ -22,7 +22,7 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-gov-primary border-b border-green-600 shadow-[0_8px_32px_rgba(0,0,0,0.7)] transition-shadow duration-300"
+      className="fixed top-0 left-0 right-0 z-50 bg-gov-primary border-b border-gov-gold shadow-[0_8px_32px_rgba(0,0,0,0.7)] transition-shadow duration-300"
     >
       {/* ── Top utility bar ─────────────────────────────────────── */}
       <div className={`hidden lg:block bg-gov-primary-hover border-b border-white/10 overflow-hidden transition-all duration-300 ease-in-out ${
