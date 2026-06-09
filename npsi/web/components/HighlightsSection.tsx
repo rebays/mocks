@@ -38,7 +38,7 @@ export default function HighlightsSection() {
           src="/traditional_ring.png"
           alt=""
           fill
-          className="opacity-50 object-cover"
+          className="opacity-75 object-cover"
         />
       </div>
 
