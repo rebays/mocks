@@ -33,13 +33,12 @@ export default function HighlightsSection() {
   return (
     <section className="relative pt-64 pb-16 sm:pb-20 bg-white">
       {/* ── Decorative background ring — z-0 ─────────────────────── */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <Image
           src="/traditional_ring.png"
           alt=""
-          width={700}
-          height={700}
-          className="opacity-50 object-contain"
+          fill
+          className="opacity-50 object-cover"
         />
       </div>
 
