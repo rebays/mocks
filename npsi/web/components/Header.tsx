@@ -27,7 +27,9 @@ export default function Header() {
       }`}
     >
       {/* ── Top utility bar ─────────────────────────────────────── */}
-      <div className="hidden lg:block bg-gov-primary-hover border-b border-white/10">
+      <div className={`hidden lg:block bg-gov-primary-hover border-b border-white/10 overflow-hidden transition-all duration-300 ease-in-out ${
+        scrolled ? "max-h-0 opacity-0" : "max-h-12 opacity-100"
+      }`}>
         <div className="px-6 py-1.5 text-xs text-white/60 text-center">
           🇸🇧 Official Website of the Solomon Islands Government
         </div>
