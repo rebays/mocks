@@ -50,7 +50,7 @@ export default function Hero() {
             </div>
           </div>
         ))}
-        <div className="absolute inset-0 bg-gov-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-gov-primary/85 via-gov-primary/40 to-transparent" />
 
         {/* Decorative SVG grid */}
         <div className="absolute inset-0 opacity-5">
