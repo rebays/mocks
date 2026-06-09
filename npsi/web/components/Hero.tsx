@@ -56,18 +56,18 @@ export default function Hero() {
           </h1>
 
           {/* Menu sections */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-gray-100 pt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {nav.slice(0, 3).map((section) => (
-              <div key={section.label} className="border border-gray-200 rounded-lg p-5">
+              <div key={section.label}>
                 <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">
                   {section.label}
                 </h2>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   {section.items.slice(0, 3).map((item) => (
-                    <li key={item.label}>
+                    <li key={item.label} className="border border-gray-200 rounded-md">
                       <Link
                         href={item.href}
-                        className="text-base text-gray-700 hover:text-gov-accent transition-colors"
+                        className="block px-3 py-2 text-base text-gray-700 hover:text-gov-accent transition-colors"
                       >
                         {item.label}
                       </Link>
