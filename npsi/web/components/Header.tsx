@@ -28,16 +28,8 @@ export default function Header() {
     >
       {/* ── Top utility bar ─────────────────────────────────────── */}
       <div className="hidden lg:block bg-gov-primary-hover border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-1.5 text-xs text-white/60">
-          <span>National Parliament of Solomon Islands</span>
-          <a
-            href="https://parliament.gov.sb"
-            className="hover:text-white transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            parliament.gov.sb
-          </a>
+        <div className="px-6 py-1.5 text-xs text-white/60 text-center">
+          🇸🇧 Official Website of the Solomon Islands Government
         </div>
       </div>
 
