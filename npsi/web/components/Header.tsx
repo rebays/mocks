@@ -37,7 +37,7 @@ export default function Header() {
 
       {/* ── Main nav bar ────────────────────────────────────────── */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-[72px] lg:h-14">
+        <div className="flex items-center justify-between h-20 lg:h-20">
           {/* Logo */}
           <Link href="/" className="shrink-0">
             <div className="relative h-10 w-56">
