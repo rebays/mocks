@@ -32,7 +32,7 @@ export default function Hero() {
         {slides.map((slide, i) => (
           <div
             key={slide.image}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
+            className={`absolute inset-0 transition-opacity duration-300 ease-out ${
               i === current ? "opacity-100" : "opacity-0"
             }`}
           >
