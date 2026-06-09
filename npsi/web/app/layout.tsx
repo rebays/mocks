@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={roboto.variable}>
       <body className="bg-white min-h-screen flex flex-col">
         <Header />
-        <main id="main-content" className="flex-1 pt-20">
+        <main id="main-content" className="flex-1 pt-32">
           {children}
         </main>
         <Footer />
