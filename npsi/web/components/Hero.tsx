@@ -47,7 +47,7 @@ export default function Hero() {
       <div className="flex-1" />
 
       {/* ── CTA card — overlaps hero bottom border ───────────────── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 translate-y-12">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 translate-y-1/2">
         <div className="bg-white border border-gray-100 rounded-xl p-8 sm:p-10 shadow-[0_2px_6px_rgba(0,0,0,0.55)]">
           {/* Headline */}
           <h1 className="text-3xl sm:text-4xl font-bold text-gov-primary leading-tight mb-8">
